@@ -3,27 +3,26 @@ import Stevia
 
 class MainVC: UIViewController {
     
+    private let networking = Networking()
+    private let tableView = UITableView()
+    
     private var anime: [Anime] = [] {
         didSet {
             tableView.reloadData()
         }
     }
-    
-    private let networking = Networking()
-    
-    private let tableView = UITableView()
 
+    //MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAll()
     }
     
+    //MARK: - Setup
+    
     private func setupAll() {
-        networking.getAnime { anime in
-            DispatchQueue.main.async {
-                self.anime = anime
-            }
-        }
+        getAnime()
         setupLayout()
         setupTable()
     }
@@ -35,14 +34,27 @@ class MainVC: UIViewController {
     }
     
     private func setupLayout() {
-        view.backgroundColor = .brown
         view.subviews {
             tableView
         }
         tableView.fillContainer()
     }
-
-
+    
+    //MARK: - Action
+    
+    private func getAnime() {
+        networking.getAnime { anime in
+            DispatchQueue.main.async {
+                self.anime = anime
+            }
+        }
+    }
+    
+    private func showDetailVC(selectedAnime: Anime) {
+        let detailVC = DetailVC()
+        detailVC.anime = selectedAnime
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
 }
 
 extension MainVC: UITableViewDelegate, UITableViewDataSource {
@@ -54,6 +66,11 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.id, for: indexPath) as! MainTableViewCell
         cell.setupCell(anime: anime[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedAnime = anime[indexPath.row]
+        showDetailVC(selectedAnime: selectedAnime)
     }
 }
 

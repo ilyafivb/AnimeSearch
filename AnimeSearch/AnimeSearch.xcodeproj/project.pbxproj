@@ -16,9 +16,7 @@
 		047A43F027EB323000E72D9F /* AnimeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A43EF27EB323000E72D9F /* AnimeData.swift */; };
 		047A43F527EB365E00E72D9F /* Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A43F427EB365E00E72D9F /* Attributes.swift */; };
 		047A43F727EB377A00E72D9F /* Titles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A43F627EB377A00E72D9F /* Titles.swift */; };
-		047A43F927EB37FF00E72D9F /* RatingFrequencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A43F827EB37FF00E72D9F /* RatingFrequencies.swift */; };
 		047A43FB27EB399B00E72D9F /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A43FA27EB399B00E72D9F /* Networking.swift */; };
-		047A43FD27EB404E00E72D9F /* Relationships.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A43FC27EB404E00E72D9F /* Relationships.swift */; };
 		047A43FF27EB414000E72D9F /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A43FE27EB414000E72D9F /* Links.swift */; };
 		047A440127EB418900E72D9F /* Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A440027EB418900E72D9F /* Count.swift */; };
 		047A440327EB41D400E72D9F /* Anime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A440227EB41D400E72D9F /* Anime.swift */; };
@@ -38,9 +36,7 @@
 		047A43EF27EB323000E72D9F /* AnimeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeData.swift; sourceTree = "<group>"; };
 		047A43F427EB365E00E72D9F /* Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attributes.swift; sourceTree = "<group>"; };
 		047A43F627EB377A00E72D9F /* Titles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Titles.swift; sourceTree = "<group>"; };
-		047A43F827EB37FF00E72D9F /* RatingFrequencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingFrequencies.swift; sourceTree = "<group>"; };
 		047A43FA27EB399B00E72D9F /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		047A43FC27EB404E00E72D9F /* Relationships.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Relationships.swift; sourceTree = "<group>"; };
 		047A43FE27EB414000E72D9F /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
 		047A440027EB418900E72D9F /* Count.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Count.swift; sourceTree = "<group>"; };
 		047A440227EB41D400E72D9F /* Anime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anime.swift; sourceTree = "<group>"; };
@@ -61,6 +57,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		046D316827EC8D1100BA3B8F /* DetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				046D316227EC169E00BA3B8F /* DetailVC.swift */,
+			);
+			path = DetailVC;
+			sourceTree = "<group>";
+		};
+		046D316927EC8D6E00BA3B8F /* AnimeData */ = {
+			isa = PBXGroup;
+			children = (
+				047A43EF27EB323000E72D9F /* AnimeData.swift */,
+				047A43FE27EB414000E72D9F /* Links.swift */,
+			);
+			path = AnimeData;
+			sourceTree = "<group>";
+		};
 		047A43CA27EB2DDC00E72D9F = {
 			isa = PBXGroup;
 			children = (
@@ -93,15 +106,12 @@
 		047A43F127EB360700E72D9F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				047A43EF27EB323000E72D9F /* AnimeData.swift */,
+				046D316927EC8D6E00BA3B8F /* AnimeData */,
 				047A440027EB418900E72D9F /* Count.swift */,
 				047A43F427EB365E00E72D9F /* Attributes.swift */,
 				047A440627EB762500E72D9F /* CoverImage.swift */,
 				047A440427EB756600E72D9F /* PosterImage.swift */,
-				047A43F827EB37FF00E72D9F /* RatingFrequencies.swift */,
 				047A43F627EB377A00E72D9F /* Titles.swift */,
-				047A43FC27EB404E00E72D9F /* Relationships.swift */,
-				047A43FE27EB414000E72D9F /* Links.swift */,
 				047A440227EB41D400E72D9F /* Anime.swift */,
 			);
 			path = Models;
@@ -110,6 +120,7 @@
 		047A43F227EB361600E72D9F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				046D316827EC8D1100BA3B8F /* DetailVC */,
 				047A43F327EB362000E72D9F /* MainVC */,
 			);
 			path = ViewControllers;
@@ -120,7 +131,6 @@
 			children = (
 				047A43DA27EB2DDC00E72D9F /* MainVC.swift */,
 				047A43ED27EB310000E72D9F /* MainTableViewCell.swift */,
-				046D316227EC169E00BA3B8F /* DetailVC.swift */,
 			);
 			path = MainVC;
 			sourceTree = "<group>";
@@ -204,14 +214,12 @@
 			files = (
 				047A43F727EB377A00E72D9F /* Titles.swift in Sources */,
 				047A43F027EB323000E72D9F /* AnimeData.swift in Sources */,
-				047A43FD27EB404E00E72D9F /* Relationships.swift in Sources */,
 				047A440727EB762500E72D9F /* CoverImage.swift in Sources */,
 				047A43F527EB365E00E72D9F /* Attributes.swift in Sources */,
 				046D316327EC169E00BA3B8F /* DetailVC.swift in Sources */,
 				047A43FB27EB399B00E72D9F /* Networking.swift in Sources */,
 				047A440527EB756600E72D9F /* PosterImage.swift in Sources */,
 				047A43FF27EB414000E72D9F /* Links.swift in Sources */,
-				047A43F927EB37FF00E72D9F /* RatingFrequencies.swift in Sources */,
 				047A440327EB41D400E72D9F /* Anime.swift in Sources */,
 				047A43DB27EB2DDC00E72D9F /* MainVC.swift in Sources */,
 				047A43EE27EB310000E72D9F /* MainTableViewCell.swift in Sources */,

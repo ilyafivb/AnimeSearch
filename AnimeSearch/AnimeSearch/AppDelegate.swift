@@ -12,9 +12,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func setupInitialUI() {
         let mainVC = MainVC()
+        let navMainVC = UINavigationController(rootViewController: mainVC)
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = mainVC
+        window?.rootViewController = navMainVC
         window?.makeKeyAndVisible()
+        window?.backgroundColor = .lightGray
     }
 }
 
