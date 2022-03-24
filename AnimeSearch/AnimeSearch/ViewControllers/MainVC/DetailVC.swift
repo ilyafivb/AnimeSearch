@@ -1,12 +1,11 @@
 import UIKit
 import Stevia
+import Kingfisher
 
-class MainVC: UIViewController {
+class DetailVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-
 }
-

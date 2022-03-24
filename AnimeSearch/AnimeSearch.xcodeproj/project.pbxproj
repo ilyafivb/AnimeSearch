@@ -7,18 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		046D316327EC169E00BA3B8F /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D316227EC169E00BA3B8F /* DetailVC.swift */; };
 		047A43D727EB2DDC00E72D9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A43D627EB2DDC00E72D9F /* AppDelegate.swift */; };
 		047A43DB27EB2DDC00E72D9F /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A43DA27EB2DDC00E72D9F /* MainVC.swift */; };
 		047A43E027EB2DDD00E72D9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047A43DF27EB2DDD00E72D9F /* Assets.xcassets */; };
 		047A43EC27EB2E1B00E72D9F /* Stevia in Frameworks */ = {isa = PBXBuildFile; productRef = 047A43EB27EB2E1B00E72D9F /* Stevia */; };
+		047A43EE27EB310000E72D9F /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A43ED27EB310000E72D9F /* MainTableViewCell.swift */; };
+		047A43F027EB323000E72D9F /* AnimeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A43EF27EB323000E72D9F /* AnimeData.swift */; };
+		047A43F527EB365E00E72D9F /* Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A43F427EB365E00E72D9F /* Attributes.swift */; };
+		047A43F727EB377A00E72D9F /* Titles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A43F627EB377A00E72D9F /* Titles.swift */; };
+		047A43F927EB37FF00E72D9F /* RatingFrequencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A43F827EB37FF00E72D9F /* RatingFrequencies.swift */; };
+		047A43FB27EB399B00E72D9F /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A43FA27EB399B00E72D9F /* Networking.swift */; };
+		047A43FD27EB404E00E72D9F /* Relationships.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A43FC27EB404E00E72D9F /* Relationships.swift */; };
+		047A43FF27EB414000E72D9F /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A43FE27EB414000E72D9F /* Links.swift */; };
+		047A440127EB418900E72D9F /* Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A440027EB418900E72D9F /* Count.swift */; };
+		047A440327EB41D400E72D9F /* Anime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A440227EB41D400E72D9F /* Anime.swift */; };
+		047A440527EB756600E72D9F /* PosterImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A440427EB756600E72D9F /* PosterImage.swift */; };
+		047A440727EB762500E72D9F /* CoverImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A440627EB762500E72D9F /* CoverImage.swift */; };
+		047A440A27EB7B6200E72D9F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 047A440927EB7B6200E72D9F /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		046D316227EC169E00BA3B8F /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		047A43D327EB2DDC00E72D9F /* AnimeSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimeSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		047A43D627EB2DDC00E72D9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		047A43DA27EB2DDC00E72D9F /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		047A43DF27EB2DDD00E72D9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		047A43E427EB2DDD00E72D9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		047A43ED27EB310000E72D9F /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		047A43EF27EB323000E72D9F /* AnimeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeData.swift; sourceTree = "<group>"; };
+		047A43F427EB365E00E72D9F /* Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attributes.swift; sourceTree = "<group>"; };
+		047A43F627EB377A00E72D9F /* Titles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Titles.swift; sourceTree = "<group>"; };
+		047A43F827EB37FF00E72D9F /* RatingFrequencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingFrequencies.swift; sourceTree = "<group>"; };
+		047A43FA27EB399B00E72D9F /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		047A43FC27EB404E00E72D9F /* Relationships.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Relationships.swift; sourceTree = "<group>"; };
+		047A43FE27EB414000E72D9F /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
+		047A440027EB418900E72D9F /* Count.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Count.swift; sourceTree = "<group>"; };
+		047A440227EB41D400E72D9F /* Anime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anime.swift; sourceTree = "<group>"; };
+		047A440427EB756600E72D9F /* PosterImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImage.swift; sourceTree = "<group>"; };
+		047A440627EB762500E72D9F /* CoverImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				047A440A27EB7B6200E72D9F /* Kingfisher in Frameworks */,
 				047A43EC27EB2E1B00E72D9F /* Stevia in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,12 +80,49 @@
 		047A43D527EB2DDC00E72D9F /* AnimeSearch */ = {
 			isa = PBXGroup;
 			children = (
+				047A43FA27EB399B00E72D9F /* Networking.swift */,
 				047A43D627EB2DDC00E72D9F /* AppDelegate.swift */,
-				047A43DA27EB2DDC00E72D9F /* MainVC.swift */,
+				047A43F227EB361600E72D9F /* ViewControllers */,
+				047A43F127EB360700E72D9F /* Models */,
 				047A43DF27EB2DDD00E72D9F /* Assets.xcassets */,
 				047A43E427EB2DDD00E72D9F /* Info.plist */,
 			);
 			path = AnimeSearch;
+			sourceTree = "<group>";
+		};
+		047A43F127EB360700E72D9F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				047A43EF27EB323000E72D9F /* AnimeData.swift */,
+				047A440027EB418900E72D9F /* Count.swift */,
+				047A43F427EB365E00E72D9F /* Attributes.swift */,
+				047A440627EB762500E72D9F /* CoverImage.swift */,
+				047A440427EB756600E72D9F /* PosterImage.swift */,
+				047A43F827EB37FF00E72D9F /* RatingFrequencies.swift */,
+				047A43F627EB377A00E72D9F /* Titles.swift */,
+				047A43FC27EB404E00E72D9F /* Relationships.swift */,
+				047A43FE27EB414000E72D9F /* Links.swift */,
+				047A440227EB41D400E72D9F /* Anime.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		047A43F227EB361600E72D9F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				047A43F327EB362000E72D9F /* MainVC */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		047A43F327EB362000E72D9F /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				047A43DA27EB2DDC00E72D9F /* MainVC.swift */,
+				047A43ED27EB310000E72D9F /* MainTableViewCell.swift */,
+				046D316227EC169E00BA3B8F /* DetailVC.swift */,
+			);
+			path = MainVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,6 +143,7 @@
 			name = AnimeSearch;
 			packageProductDependencies = (
 				047A43EB27EB2E1B00E72D9F /* Stevia */,
+				047A440927EB7B6200E72D9F /* Kingfisher */,
 			);
 			productName = AnimeSearch;
 			productReference = 047A43D327EB2DDC00E72D9F /* AnimeSearch.app */;
@@ -109,6 +175,7 @@
 			mainGroup = 047A43CA27EB2DDC00E72D9F;
 			packageReferences = (
 				047A43EA27EB2E1B00E72D9F /* XCRemoteSwiftPackageReference "Stevia" */,
+				047A440827EB7B6200E72D9F /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 047A43D427EB2DDC00E72D9F /* Products */;
 			projectDirPath = "";
@@ -135,7 +202,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				047A43F727EB377A00E72D9F /* Titles.swift in Sources */,
+				047A43F027EB323000E72D9F /* AnimeData.swift in Sources */,
+				047A43FD27EB404E00E72D9F /* Relationships.swift in Sources */,
+				047A440727EB762500E72D9F /* CoverImage.swift in Sources */,
+				047A43F527EB365E00E72D9F /* Attributes.swift in Sources */,
+				046D316327EC169E00BA3B8F /* DetailVC.swift in Sources */,
+				047A43FB27EB399B00E72D9F /* Networking.swift in Sources */,
+				047A440527EB756600E72D9F /* PosterImage.swift in Sources */,
+				047A43FF27EB414000E72D9F /* Links.swift in Sources */,
+				047A43F927EB37FF00E72D9F /* RatingFrequencies.swift in Sources */,
+				047A440327EB41D400E72D9F /* Anime.swift in Sources */,
 				047A43DB27EB2DDC00E72D9F /* MainVC.swift in Sources */,
+				047A43EE27EB310000E72D9F /* MainTableViewCell.swift in Sources */,
+				047A440127EB418900E72D9F /* Count.swift in Sources */,
 				047A43D727EB2DDC00E72D9F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +350,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AnimeSearch/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -297,6 +378,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AnimeSearch/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -345,6 +427,14 @@
 				kind = branch;
 			};
 		};
+		047A440827EB7B6200E72D9F /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -352,6 +442,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 047A43EA27EB2E1B00E72D9F /* XCRemoteSwiftPackageReference "Stevia" */;
 			productName = Stevia;
+		};
+		047A440927EB7B6200E72D9F /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 047A440827EB7B6200E72D9F /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
