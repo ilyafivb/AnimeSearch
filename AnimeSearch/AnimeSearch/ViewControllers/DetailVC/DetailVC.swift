@@ -52,8 +52,9 @@ class DetailVC: UIViewController {
     }
     
     private func setupStyle() {
+        view.backgroundColor = .white
         canonicalTitleLabel.text = anime?.attributes?.canonicalTitle
-        canonicalTitleLabel.font = UIFont(name: "Zapfino", size: 20)
+        canonicalTitleLabel.font = UIFont.boldSystemFont(ofSize: 30)
         canonicalTitleLabel.textAlignment = .center
         canonicalTitleLabel.numberOfLines = 0
         
@@ -61,7 +62,7 @@ class DetailVC: UIViewController {
         posterImageView.clipsToBounds = true
         
         descriptionLabel.text = anime?.attributes?.description
-        descriptionLabel.font = UIFont(name: "American Typewriter", size: 20)
+        descriptionLabel.font = UIFont.systemFont(ofSize: 20)
         descriptionLabel.numberOfLines = 0
     }
     

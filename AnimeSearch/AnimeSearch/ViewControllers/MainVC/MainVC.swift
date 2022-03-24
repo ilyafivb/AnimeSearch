@@ -31,6 +31,7 @@ class MainVC: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(MainTableViewCell.self, forCellReuseIdentifier: MainTableViewCell.id)
+        tableView.separatorStyle = .none
     }
     
     private func setupLayout() {

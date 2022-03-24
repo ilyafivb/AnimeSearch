@@ -2,7 +2,6 @@ import Foundation
 
 struct Attributes: Codable {
        var description: String
-       var titles: Titles?
        var canonicalTitle: String
        var averageRating: String
        var userCount: Int
