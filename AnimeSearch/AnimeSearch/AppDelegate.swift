@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navMainVC
         window?.makeKeyAndVisible()
-        window?.backgroundColor = .lightGray
     }
 }
 

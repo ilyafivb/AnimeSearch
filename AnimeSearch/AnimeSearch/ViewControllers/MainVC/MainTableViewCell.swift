@@ -28,12 +28,12 @@ class MainTableViewCell: UITableViewCell {
     }
     
     private func setupStyle() {
-        contentView.backgroundColor = .lightGray
-        
         coverImageView.layer.cornerRadius = 30
         coverImageView.clipsToBounds = true
+        coverImageView.contentMode = .scaleAspectFill
         
-        titleAnimeLabel.font = UIFont(name: "Chalkduster", size: 25)
+        titleAnimeLabel.font = UIFont.boldSystemFont(ofSize: 30)
+        titleAnimeLabel.numberOfLines = 0
         titleAnimeLabel.textColor = .white
         titleAnimeLabel.textAlignment = .center
         
@@ -54,23 +54,23 @@ class MainTableViewCell: UITableViewCell {
                 titleAnimeLabel
             }
         }
-        coverImageView.Top == contentView.Top + 20
-        coverImageView.Leading == contentView.Leading + 20
-        coverImageView.Trailing == contentView.Trailing - 20
+        coverImageView.Top == contentView.Top + 5
+        coverImageView.Leading == contentView.Leading + 5
+        coverImageView.Trailing == contentView.Trailing - 5
         coverImageView.Height == coverImageView.Width
-        coverImageView.Bottom == contentView.Bottom - 20
+        coverImageView.Bottom == contentView.Bottom - 5
 
         ratingButton.Top == coverImageView.Top + 20
-        ratingButton.Leading == coverImageView.Leading
+        ratingButton.Leading == coverImageView.Leading + 10
         
-        titleAnimeLabel.CenterY == titleView.CenterY
+        titleAnimeLabel.Bottom == coverImageView.Bottom - 10
         titleAnimeLabel.Leading == coverImageView.Leading
         titleAnimeLabel.Trailing == coverImageView.Trailing
         
-        titleView.Bottom == coverImageView.Bottom
+        titleView.Top == titleAnimeLabel.Top - 10
         titleView.Leading == coverImageView.Leading
         titleView.Trailing == coverImageView.Trailing
-        titleView.Height == 40
+        titleView.Bottom == coverImageView.Bottom
     }
     
     func setupCell(anime: Anime) {
@@ -83,8 +83,5 @@ class MainTableViewCell: UITableViewCell {
         }
         ratingButton.setTitle(anime.attributes?.averageRating, for: .normal)
         titleAnimeLabel.text = anime.attributes?.canonicalTitle
-        if let textLenght = titleAnimeLabel.text, textLenght.count > 30 {
-            titleAnimeLabel.font = UIFont(name: "Chalkduster", size: 16)
-        }
     }
 }
