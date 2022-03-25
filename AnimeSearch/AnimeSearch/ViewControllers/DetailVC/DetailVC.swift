@@ -1,6 +1,7 @@
 import UIKit
 import Stevia
 import Kingfisher
+import AVKit
 
 class DetailVC: UIViewController {
     
@@ -17,6 +18,7 @@ class DetailVC: UIViewController {
     private let episodeLengthLabel = UILabel()
     private let totalLengthLabel = UILabel()
     private let showTypeLabel = UILabel()
+    private let trailerButton = UIButton()
     
     var anime: Anime?
 
@@ -57,6 +59,12 @@ class DetailVC: UIViewController {
         posterImageView.clipsToBounds = true
         posterImageView.contentMode = .scaleAspectFill
         
+        trailerButton.setTitle("Click to see Trailer", for: .normal)
+        trailerButton.addTarget(self, action: #selector(showTrailer), for: .touchUpInside)
+        trailerButton.titleLabel?.fillContainer(padding: 10)
+        trailerButton.backgroundColor = .blue
+        trailerButton.layer.cornerRadius = 15
+        
         descriptionLabel.text = anime?.attributes?.description
         descriptionLabel.font = UIFont.systemFont(ofSize: 20)
         descriptionLabel.numberOfLines = 0
@@ -92,6 +100,7 @@ class DetailVC: UIViewController {
             scrollView.subviews {
                 canonicalTitleLabel
                 posterImageView
+                trailerButton
                 descriptionLabel
                 stackView
             }
@@ -107,6 +116,9 @@ class DetailVC: UIViewController {
         posterImageView.Trailing == canonicalTitleLabel.Trailing
         posterImageView.Height == posterImageView.Width
         
+        trailerButton.Trailing == posterImageView.Trailing - 20
+        trailerButton.Bottom == posterImageView.Bottom - 20
+        
         descriptionLabel.Top == posterImageView.Bottom + 20
         descriptionLabel.Leading == canonicalTitleLabel.Leading
         descriptionLabel.Trailing == canonicalTitleLabel.Trailing
@@ -115,5 +127,12 @@ class DetailVC: UIViewController {
         stackView.Leading == canonicalTitleLabel.Leading
         stackView.Trailing == canonicalTitleLabel.Trailing
         stackView.Bottom == scrollView.Bottom - 20
+    }
+    
+    @objc func showTrailer() {
+        
+        let player = YouTubePlayerVC()
+        player.anime = anime
+        navigationController?.pushViewController(player, animated: true)
     }
 }

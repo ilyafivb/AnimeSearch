@@ -37,11 +37,11 @@ class MainTableViewCell: UITableViewCell {
         titleAnimeLabel.textColor = .white
         titleAnimeLabel.textAlignment = .center
         
-        titleView.backgroundColor = .orange
+        titleView.backgroundColor = .blue
                 
         ratingButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
         ratingButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
-        ratingButton.backgroundColor = .orange
+        ratingButton.backgroundColor = .blue
         ratingButton.tintColor = .yellow
         ratingButton.layer.cornerRadius = 10
     }
