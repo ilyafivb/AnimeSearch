@@ -2,7 +2,7 @@ import Foundation
 
 class Networking {
     
-    let baseUrl = "https://kitsu.io/api/edge/anime"
+    let baseUrl = "https://kitsu.io/api/edge/anime?page[limit]=20"
     
     func getAnime(_ completion: @escaping ([Anime]) -> Void) {
         guard let url = URL(string: baseUrl) else { return }

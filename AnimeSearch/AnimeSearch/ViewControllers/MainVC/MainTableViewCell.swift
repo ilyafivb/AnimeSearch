@@ -28,7 +28,7 @@ class MainTableViewCell: UITableViewCell {
     }
     
     private func setupStyle() {
-        coverImageView.layer.cornerRadius = 30
+        coverImageView.layer.cornerRadius = 15
         coverImageView.clipsToBounds = true
         coverImageView.contentMode = .scaleAspectFill
         
@@ -64,8 +64,8 @@ class MainTableViewCell: UITableViewCell {
         ratingButton.Leading == coverImageView.Leading + 10
         
         titleAnimeLabel.Bottom == coverImageView.Bottom - 10
-        titleAnimeLabel.Leading == coverImageView.Leading
-        titleAnimeLabel.Trailing == coverImageView.Trailing
+        titleAnimeLabel.Leading == coverImageView.Leading + 40
+        titleAnimeLabel.Trailing == coverImageView.Trailing - 40
         
         titleView.Top == titleAnimeLabel.Top - 10
         titleView.Leading == coverImageView.Leading
@@ -77,7 +77,8 @@ class MainTableViewCell: UITableViewCell {
         if let dataImage = anime.attributes?.coverImage {
             let url = URL(string: dataImage.original)
             coverImageView.kf.setImage(with: url)
-        } else if let dataImage = anime.attributes?.posterImage {
+        } else
+        if let dataImage = anime.attributes?.posterImage {
             let url = URL(string: dataImage.original)
             coverImageView.kf.setImage(with: url)
         }

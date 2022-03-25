@@ -8,13 +8,8 @@ class DetailVC: UIViewController {
     private let stackView = UIStackView()
     private let descriptionLabel = UILabel()
     private let canonicalTitleLabel = UILabel()
-    private let averageRatingLabel = UILabel()
-    private let userCountLabel = UILabel()
-    private let favoritesCountLabel = UILabel()
     private let startDateLabel = UILabel()
     private let endDateLabel = UILabel()
-    private let popularityRankLabel = UILabel()
-    private let ratingRankLabel = UILabel()
     private let ageRatingGuideLabel = UILabel()
     private let statusLabel = UILabel()
     private let posterImageView = UIImageView()
@@ -58,8 +53,9 @@ class DetailVC: UIViewController {
         canonicalTitleLabel.textAlignment = .center
         canonicalTitleLabel.numberOfLines = 0
         
-        posterImageView.layer.cornerRadius = 30
+        posterImageView.layer.cornerRadius = 15
         posterImageView.clipsToBounds = true
+        posterImageView.contentMode = .scaleAspectFill
         
         descriptionLabel.text = anime?.attributes?.description
         descriptionLabel.font = UIFont.systemFont(ofSize: 20)
@@ -67,13 +63,8 @@ class DetailVC: UIViewController {
     }
     
     private func setupStack() {
-        stackView.addArrangedSubview(averageRatingLabel)
-        stackView.addArrangedSubview(userCountLabel)
-        stackView.addArrangedSubview(favoritesCountLabel)
         stackView.addArrangedSubview(startDateLabel)
         stackView.addArrangedSubview(endDateLabel)
-        stackView.addArrangedSubview(popularityRankLabel)
-        stackView.addArrangedSubview(ratingRankLabel)
         stackView.addArrangedSubview(ageRatingGuideLabel)
         stackView.addArrangedSubview(statusLabel)
         stackView.addArrangedSubview(episodeCountLabel)
@@ -86,18 +77,13 @@ class DetailVC: UIViewController {
         stackView.distribution = .equalSpacing
         stackView.spacing = 10
         
-        averageRatingLabel.text = "Average rating: \(anime?.attributes?.averageRating ?? "")"
-        userCountLabel.text = "User count: \(anime?.attributes?.userCount.description ?? "")"
-        favoritesCountLabel.text = "Favorites Count: \(anime?.attributes?.favoritesCount.description ?? "")"
         startDateLabel.text = "Start date: \(anime?.attributes?.startDate ?? "")"
         endDateLabel.text = "End date: \(anime?.attributes?.endDate ?? "")"
-        popularityRankLabel.text = "Popularity rank: \(anime?.attributes?.popularityRank.description ?? "")"
-        ratingRankLabel.text = "Rating rank: \(anime?.attributes?.ratingRank.description ?? "")"
         ageRatingGuideLabel.text = "Age rating: \(anime?.attributes?.ageRatingGuide ?? "")"
         statusLabel.text = "Status anime: \(anime?.attributes?.status ?? "")"
-        episodeCountLabel.text = "Episode count: \(anime?.attributes?.episodeCount.description ?? "")"
+        episodeCountLabel.text = "Episode count: \(anime?.attributes?.episodeCount?.description ?? "")"
         episodeLengthLabel.text = "Episode length: \(anime?.attributes?.episodeLength?.description ?? "") min."
-        totalLengthLabel.text = "Total length: \(anime?.attributes?.totalLength.description ?? "") min."
+        totalLengthLabel.text = "Total length: \(anime?.attributes?.totalLength?.description ?? "") min."
         showTypeLabel.text = "Type: \(anime?.attributes?.showType ?? "")"
     }
     

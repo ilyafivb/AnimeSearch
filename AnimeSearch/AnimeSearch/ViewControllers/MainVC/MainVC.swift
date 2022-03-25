@@ -65,6 +65,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.id, for: indexPath) as! MainTableViewCell
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         cell.setupCell(anime: anime[indexPath.row])
         return cell
     }
