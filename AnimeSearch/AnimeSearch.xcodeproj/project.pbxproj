@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		046D316327EC169E00BA3B8F /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D316227EC169E00BA3B8F /* DetailVC.swift */; };
+		046D316F27ED704F00BA3B8F /* YouTubeiOSPlayerHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 046D316E27ED704F00BA3B8F /* YouTubeiOSPlayerHelper */; };
+		046D317227ED708E00BA3B8F /* YouTubePlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D317127ED708E00BA3B8F /* YouTubePlayerVC.swift */; };
 		047A43D727EB2DDC00E72D9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A43D627EB2DDC00E72D9F /* AppDelegate.swift */; };
 		047A43DB27EB2DDC00E72D9F /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A43DA27EB2DDC00E72D9F /* MainVC.swift */; };
 		047A43E027EB2DDD00E72D9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047A43DF27EB2DDD00E72D9F /* Assets.xcassets */; };
@@ -24,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		046D316227EC169E00BA3B8F /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		046D317127ED708E00BA3B8F /* YouTubePlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubePlayerVC.swift; sourceTree = "<group>"; };
 		047A43D327EB2DDC00E72D9F /* AnimeSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimeSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		047A43D627EB2DDC00E72D9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		047A43DA27EB2DDC00E72D9F /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -45,6 +48,7 @@
 			files = (
 				047A440A27EB7B6200E72D9F /* Kingfisher in Frameworks */,
 				047A43EC27EB2E1B00E72D9F /* Stevia in Frameworks */,
+				046D316F27ED704F00BA3B8F /* YouTubeiOSPlayerHelper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +69,14 @@
 				047A43FA27EB399B00E72D9F /* Networking.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		046D317027ED706E00BA3B8F /* YouTubePlayerVC */ = {
+			isa = PBXGroup;
+			children = (
+				046D317127ED708E00BA3B8F /* YouTubePlayerVC.swift */,
+			);
+			path = YouTubePlayerVC;
 			sourceTree = "<group>";
 		};
 		047A43CA27EB2DDC00E72D9F = {
@@ -111,6 +123,7 @@
 		047A43F227EB361600E72D9F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				046D317027ED706E00BA3B8F /* YouTubePlayerVC */,
 				046D316827EC8D1100BA3B8F /* DetailVC */,
 				047A43F327EB362000E72D9F /* MainVC */,
 			);
@@ -145,6 +158,7 @@
 			packageProductDependencies = (
 				047A43EB27EB2E1B00E72D9F /* Stevia */,
 				047A440927EB7B6200E72D9F /* Kingfisher */,
+				046D316E27ED704F00BA3B8F /* YouTubeiOSPlayerHelper */,
 			);
 			productName = AnimeSearch;
 			productReference = 047A43D327EB2DDC00E72D9F /* AnimeSearch.app */;
@@ -177,6 +191,7 @@
 			packageReferences = (
 				047A43EA27EB2E1B00E72D9F /* XCRemoteSwiftPackageReference "Stevia" */,
 				047A440827EB7B6200E72D9F /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				046D316D27ED704F00BA3B8F /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */,
 			);
 			productRefGroup = 047A43D427EB2DDC00E72D9F /* Products */;
 			projectDirPath = "";
@@ -206,6 +221,7 @@
 				047A43F027EB323000E72D9F /* AnimeData.swift in Sources */,
 				047A440727EB762500E72D9F /* CoverImage.swift in Sources */,
 				047A43F527EB365E00E72D9F /* Attributes.swift in Sources */,
+				046D317227ED708E00BA3B8F /* YouTubePlayerVC.swift in Sources */,
 				046D316327EC169E00BA3B8F /* DetailVC.swift in Sources */,
 				047A43FB27EB399B00E72D9F /* Networking.swift in Sources */,
 				047A440527EB756600E72D9F /* PosterImage.swift in Sources */,
@@ -415,6 +431,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		046D316D27ED704F00BA3B8F /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/youtube/youtube-ios-player-helper.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		047A43EA27EB2E1B00E72D9F /* XCRemoteSwiftPackageReference "Stevia" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/freshOS/Stevia";
@@ -434,6 +458,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		046D316E27ED704F00BA3B8F /* YouTubeiOSPlayerHelper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 046D316D27ED704F00BA3B8F /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */;
+			productName = YouTubeiOSPlayerHelper;
+		};
 		047A43EB27EB2E1B00E72D9F /* Stevia */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 047A43EA27EB2E1B00E72D9F /* XCRemoteSwiftPackageReference "Stevia" */;
