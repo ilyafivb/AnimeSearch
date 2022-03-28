@@ -8,8 +8,8 @@ class MainTableViewCell: UITableViewCell {
     
     private let coverImageView = UIImageView()
     private let titleView = UIView()
-    private let ratingButton = UIButton()
     private let titleAnimeLabel = UILabel()
+    private let raitingView = RatingView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -38,18 +38,12 @@ class MainTableViewCell: UITableViewCell {
         titleAnimeLabel.textAlignment = .center
         
         titleView.backgroundColor = .blue
-                
-        ratingButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        ratingButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
-        ratingButton.backgroundColor = .blue
-        ratingButton.tintColor = .yellow
-        ratingButton.layer.cornerRadius = 10
     }
     
     private func setupLayout() {
         contentView.subviews {
             coverImageView.subviews {
-                ratingButton
+                raitingView
                 titleView
                 titleAnimeLabel
             }
@@ -60,8 +54,8 @@ class MainTableViewCell: UITableViewCell {
         coverImageView.Height == coverImageView.Width
         coverImageView.Bottom == contentView.Bottom - 5
 
-        ratingButton.Top == coverImageView.Top + 20
-        ratingButton.Leading == coverImageView.Leading + 10
+        raitingView.Top == coverImageView.Top + 20
+        raitingView.Leading == coverImageView.Leading + 10
         
         titleAnimeLabel.Bottom == coverImageView.Bottom - 10
         titleAnimeLabel.Leading == coverImageView.Leading + 40
@@ -73,16 +67,16 @@ class MainTableViewCell: UITableViewCell {
         titleView.Bottom == coverImageView.Bottom
     }
     
-    func setupCell(anime: Anime) {
-        if let dataImage = anime.attributes?.coverImage {
+    func setupCell(content: Content) {
+        if let dataImage = content.attributes.coverImage {
             let url = URL(string: dataImage.original)
             coverImageView.kf.setImage(with: url)
         } else
-        if let dataImage = anime.attributes?.posterImage {
+        if let dataImage = content.attributes.posterImage {
             let url = URL(string: dataImage.original)
             coverImageView.kf.setImage(with: url)
         }
-        ratingButton.setTitle(anime.attributes?.averageRating, for: .normal)
-        titleAnimeLabel.text = anime.attributes?.canonicalTitle
+        raitingView.ratingLabel.text = content.attributes.averageRating
+        titleAnimeLabel.text = content.attributes.canonicalTitle
     }
 }

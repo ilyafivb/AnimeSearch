@@ -4,7 +4,7 @@ import YouTubeiOSPlayerHelper
 
 class YouTubePlayerVC: UIViewController {
     
-    var anime: Anime?
+    var content: Content?
     
     private let player = YTPlayerView()
     
@@ -15,7 +15,7 @@ class YouTubePlayerVC: UIViewController {
     
     private func setupAll() {
         setupLayout()
-        guard let url = anime?.attributes?.youtubeVideoId else { return }
+        guard let url = content?.attributes.youtubeVideoId else { return }
         player.load(withVideoId: url)
     }
     

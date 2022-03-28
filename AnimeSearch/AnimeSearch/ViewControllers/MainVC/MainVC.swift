@@ -3,15 +3,15 @@ import Stevia
 
 class MainVC: UIViewController {
     
-    private let networking = Networking()
+    private let contentService = ContentService()
     private let tableView = UITableView()
     
-    private var anime: [Anime] = [] {
+    private var content: [Content] = [] {
         didSet {
             tableView.reloadData()
         }
     }
-
+    
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -22,7 +22,7 @@ class MainVC: UIViewController {
     //MARK: - Setup
     
     private func setupAll() {
-        getAnime()
+        getContent()
         setupLayout()
         setupTable()
     }
@@ -43,36 +43,36 @@ class MainVC: UIViewController {
     
     //MARK: - Action
     
-    private func getAnime() {
-        networking.getAnime { anime in
+    private func getContent() {
+        contentService.getContent { [weak self] content in
             DispatchQueue.main.async {
-                self.anime = anime
+            self?.content = content
             }
         }
     }
     
-    private func showDetailVC(selectedAnime: Anime) {
+    private func showDetailVC(selectedContent: Content) {
         let detailVC = DetailVC()
-        detailVC.anime = selectedAnime
+        detailVC.content = selectedContent
         navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 
 extension MainVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        anime.count
+        content.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.id, for: indexPath) as! MainTableViewCell
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
-        cell.setupCell(anime: anime[indexPath.row])
+        cell.setupCell(content: content[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedAnime = anime[indexPath.row]
-        showDetailVC(selectedAnime: selectedAnime)
+        let selectedContent = content[indexPath.row]
+        showDetailVC(selectedContent: selectedContent)
     }
 }
 

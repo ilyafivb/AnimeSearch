@@ -16,11 +16,10 @@ class DetailVC: UIViewController {
     private let posterImageView = UIImageView()
     private let episodeCountLabel = UILabel()
     private let episodeLengthLabel = UILabel()
-    private let totalLengthLabel = UILabel()
     private let showTypeLabel = UILabel()
     private let trailerButton = UIButton()
     
-    var anime: Anime?
+    var content: Content?
 
     //MARK: - Lifecycle
     
@@ -34,23 +33,34 @@ class DetailVC: UIViewController {
     private func setupAll() {
         setupImage()
         setupStyle()
+        setupButton()
         setupStack()
         setupLayout()
     }
     
     private func setupImage() {
-        if let dataImage = anime?.attributes?.posterImage {
+        if let dataImage = content?.attributes.posterImage {
             let url = URL(string: dataImage.original)
             posterImageView.kf.setImage(with: url)
-        } else if let dataImage = anime?.attributes?.coverImage {
+        } else if let dataImage = content?.attributes.coverImage {
             let url = URL(string: dataImage.original)
             posterImageView.kf.setImage(with: url)
         }
     }
     
+    private func setupButton() {
+        if content?.attributes.youtubeVideoId == nil {
+            trailerButton.isHidden = true
+        } else {
+            trailerButton.isHidden = false
+        }
+        trailerButton.setTitle("Click to see Trailer", for: .normal)
+        trailerButton.addTarget(self, action: #selector(showTrailer), for: .touchUpInside)
+    }
+    
     private func setupStyle() {
         view.backgroundColor = .white
-        canonicalTitleLabel.text = anime?.attributes?.canonicalTitle
+        canonicalTitleLabel.text = content?.attributes.canonicalTitle
         canonicalTitleLabel.font = UIFont.boldSystemFont(ofSize: 30)
         canonicalTitleLabel.textAlignment = .center
         canonicalTitleLabel.numberOfLines = 0
@@ -59,13 +69,11 @@ class DetailVC: UIViewController {
         posterImageView.clipsToBounds = true
         posterImageView.contentMode = .scaleAspectFill
         
-        trailerButton.setTitle("Click to see Trailer", for: .normal)
-        trailerButton.addTarget(self, action: #selector(showTrailer), for: .touchUpInside)
         trailerButton.titleLabel?.fillContainer(padding: 10)
         trailerButton.backgroundColor = .blue
         trailerButton.layer.cornerRadius = 15
         
-        descriptionLabel.text = anime?.attributes?.description
+        descriptionLabel.text = content?.attributes.description
         descriptionLabel.font = UIFont.systemFont(ofSize: 20)
         descriptionLabel.numberOfLines = 0
     }
@@ -77,7 +85,6 @@ class DetailVC: UIViewController {
         stackView.addArrangedSubview(statusLabel)
         stackView.addArrangedSubview(episodeCountLabel)
         stackView.addArrangedSubview(episodeLengthLabel)
-        stackView.addArrangedSubview(totalLengthLabel)
         stackView.addArrangedSubview(showTypeLabel)
         
         stackView.axis = .vertical
@@ -85,14 +92,13 @@ class DetailVC: UIViewController {
         stackView.distribution = .equalSpacing
         stackView.spacing = 10
         
-        startDateLabel.text = "Start date: \(anime?.attributes?.startDate ?? "")"
-        endDateLabel.text = "End date: \(anime?.attributes?.endDate ?? "")"
-        ageRatingGuideLabel.text = "Age rating: \(anime?.attributes?.ageRatingGuide ?? "")"
-        statusLabel.text = "Status anime: \(anime?.attributes?.status ?? "")"
-        episodeCountLabel.text = "Episode count: \(anime?.attributes?.episodeCount?.description ?? "")"
-        episodeLengthLabel.text = "Episode length: \(anime?.attributes?.episodeLength?.description ?? "") min."
-        totalLengthLabel.text = "Total length: \(anime?.attributes?.totalLength?.description ?? "") min."
-        showTypeLabel.text = "Type: \(anime?.attributes?.showType ?? "")"
+        startDateLabel.text = "Start date: \(content?.attributes.startDate ?? "")"
+        endDateLabel.text = "End date: \(content?.attributes.endDate ?? "")"
+        ageRatingGuideLabel.text = "Age rating: \(content?.attributes.ageRatingGuide ?? "")"
+        statusLabel.text = "Status: \(content?.attributes.status ?? "")"
+        episodeCountLabel.text = "Episode count: \(content?.attributes.episodeCount?.description ?? "")"
+        episodeLengthLabel.text = "Episode length: \(content?.attributes.episodeLength?.description ?? "") min."
+        showTypeLabel.text = "Type: \(content?.attributes.showType ?? "")"
     }
     
     private func setupLayout() {
@@ -132,7 +138,7 @@ class DetailVC: UIViewController {
     @objc func showTrailer() {
         
         let player = YouTubePlayerVC()
-        player.anime = anime
+        player.content = content
         navigationController?.pushViewController(player, animated: true)
     }
 }
