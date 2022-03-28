@@ -93,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				046D317327ED8F0300BA3B8F /* ContentService.swift */,
+				0432A03C27EF40A500B265B3 /* RequestParameters.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -167,7 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				047A43FA27EB399B00E72D9F /* Networking.swift */,
-				0432A03C27EF40A500B265B3 /* RequestParameters.swift */,
 			);
 			path = CoreComponents;
 			sourceTree = "<group>";

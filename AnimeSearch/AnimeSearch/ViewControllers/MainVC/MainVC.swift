@@ -44,7 +44,7 @@ class MainVC: UIViewController {
     //MARK: - Action
     
     private func getContent() {
-        contentService.getContent { [weak self] content in
+        contentService.getAnime { [weak self] content in
             DispatchQueue.main.async {
             self?.content = content
             }

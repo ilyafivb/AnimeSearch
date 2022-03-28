@@ -28,6 +28,7 @@ class MainTableViewCell: UITableViewCell {
     }
     
     private func setupStyle() {
+        coverImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         coverImageView.layer.cornerRadius = 15
         coverImageView.clipsToBounds = true
         coverImageView.contentMode = .scaleAspectFill
@@ -38,33 +39,36 @@ class MainTableViewCell: UITableViewCell {
         titleAnimeLabel.textAlignment = .center
         
         titleView.backgroundColor = .blue
+        titleView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        titleView.layer.cornerRadius = 15
     }
     
     private func setupLayout() {
         contentView.subviews {
             coverImageView.subviews {
                 raitingView
-                titleView
-                titleAnimeLabel
             }
+            titleView
+            titleAnimeLabel
         }
         coverImageView.Top == contentView.Top + 5
         coverImageView.Leading == contentView.Leading + 5
         coverImageView.Trailing == contentView.Trailing - 5
         coverImageView.Height == coverImageView.Width
-        coverImageView.Bottom == contentView.Bottom - 5
 
         raitingView.Top == coverImageView.Top + 20
         raitingView.Leading == coverImageView.Leading + 10
         
-        titleAnimeLabel.Bottom == coverImageView.Bottom - 10
-        titleAnimeLabel.Leading == coverImageView.Leading + 40
-        titleAnimeLabel.Trailing == coverImageView.Trailing - 40
-        
-        titleView.Top == titleAnimeLabel.Top - 10
+        titleView.Top == coverImageView.Bottom
         titleView.Leading == coverImageView.Leading
         titleView.Trailing == coverImageView.Trailing
-        titleView.Bottom == coverImageView.Bottom
+        titleView.Bottom == contentView.Bottom - 5
+
+        titleAnimeLabel.Top == titleView.Top + 5
+        titleAnimeLabel.Leading == titleView.Leading + 40
+        titleAnimeLabel.Trailing == titleView.Trailing - 40
+        titleAnimeLabel.Bottom == titleView.Bottom - 5
+        
     }
     
     func setupCell(content: Content) {
