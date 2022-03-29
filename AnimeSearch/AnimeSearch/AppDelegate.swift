@@ -11,7 +11,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func setupInitialUI() {
-        let mainVC = MainVC()
+        let contentService = ContentService(networking: URLSessionNetworking())
+        let mainVC = MainVC.create(contentService: contentService)
         let navMainVC = UINavigationController(rootViewController: mainVC)
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navMainVC

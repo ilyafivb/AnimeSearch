@@ -6,8 +6,11 @@ protocol ContentServicable {
 }
 
 class ContentService: ContentServicable {
-            
-    let networking: Networkable = Networking()
+    let networking: Networkable
+    
+    init(networking: Networkable) {
+        self.networking = networking
+    }
     
     func getAnime(_ completion: @escaping ([Content]) -> Void) {
         networking.request(parameters: RequestParameters.anime) { (result: Result<ContentData, Error>) in

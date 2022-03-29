@@ -4,7 +4,7 @@ protocol Networkable {
     func request<Model: Decodable>(parameters: RequestComponents, _ completion: @escaping (Result<Model, Error>) -> Void)
 }
 
-class Networking: Networkable {
+class URLSessionNetworking: Networkable {
     
     enum Errors: Error {
         case wrongUrl

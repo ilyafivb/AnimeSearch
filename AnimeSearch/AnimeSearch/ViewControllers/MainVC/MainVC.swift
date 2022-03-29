@@ -1,9 +1,17 @@
 import UIKit
 import Stevia
 
+extension MainVC {
+    static func create(contentService: ContentServicable) -> MainVC {
+        let vc = MainVC()
+        vc.contentService = contentService
+        return vc
+    }
+}
+
 class MainVC: UIViewController {
     
-    private let contentService = ContentService()
+    private var contentService: ContentServicable?
     private let tableView = UITableView()
     
     private var content: [Content] = [] {
@@ -44,10 +52,8 @@ class MainVC: UIViewController {
     //MARK: - Action
     
     private func getContent() {
-        contentService.getAnime { [weak self] content in
-            DispatchQueue.main.async {
+        contentService?.getAnime { [weak self] content in
             self?.content = content
-            }
         }
     }
     
